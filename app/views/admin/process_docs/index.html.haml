@@ -5,7 +5,7 @@
     %form
       .form-group
         %label Категория насосов
-        = select_tag 'pump_category_id', options_for_select(get_pumps_categories), :class=>'form-control'
+        = select_tag 'pump_category_id', options_for_select(get_pumps_categories), :id=>'pump_category_id', :class=>'form-control'
       .row
         .col-md-12
           %input.btn.btn-default.btn-success{:id=>'download_csv', :value => 'Скачать'}

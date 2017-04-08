@@ -11,27 +11,47 @@ ADMIN = {
 
     init_btn : function () {
         $('#download_csv').click(function () {
-            alert('download_csv');
+            var category_id = $('#pump_category_id').val();
+            ADMIN.download_csv(category_id);
         });
 
         $('#download_exl').click(function () {
-            alert('download_exl ');
+            var category_id = $('#pump_category_id').val();
+            ADMIN.download_exl(category_id);
         });
     },
 
-    //AJAX 
-    post: function(data, success, error) {
+    download_csv : function (category_id) {
+      ADMIN.post('download_csv', {'pumps_category_id':category_id},
+      function (success) {
+          window.location.href = '/' + success.path;
+      },
+      function (error) {
+          alert('Произошла ошибка. Обратитесь к администратору');
+      });
+    },
+
+    download_exl : function (category_id) {
+      ADMIN.post('download_exl', {'pumps_category_id':category_id},
+      function (success) {
+          window.location.href = '/' + success.path;
+      },
+      function (error) {
+        alert('Произошла ошибка. Обратитесь к администратору');
+      });
+    },
+
+    //AJAX
+    post: function(url, data, success, error) {
         $.ajax({
-            url: '/send_form',
+            url: url,
             type: 'POST',
             data: data,
             timeout: 30000,
             dataType: 'json',
             success: success,
             error: error
-        })
-
-
+        });
     }
 
 };

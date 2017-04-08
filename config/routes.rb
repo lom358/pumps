@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :pumps, :except => [:destroy]
     resources :type_materials, except:[:destroy, :show, :edit]
     get '/process_docs' => 'process_docs#index'
+    post '/download_exl' => 'process_docs#download_exl'
+    post '/download_csv' => 'process_docs#download_csv'
     get '/' => 'users#index'
   end
 

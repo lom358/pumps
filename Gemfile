@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# For Excel
+gem 'axlsx', '~> 2.0', '>= 2.0.1'
 group :development do
   gem 'listen', '~> 3.0.5'
 end
