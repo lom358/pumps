@@ -1,0 +1,47 @@
+= form_for([:admin, @pump]) do |f|
+  - if @pump.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@pump.errors.count, "error")} prohibited this user from being saved:"
+      %ul
+        - @pump.errors.full_messages.each do |msg|
+          %li= msg
+
+  .col-md-12
+    .col-md-4
+    .col-md-4
+      .form-group
+        = f.label :mark
+        = f.text_field :mark, :class=>'form-control'
+      .form-group
+        = f.label :description
+        = f.text_area :description, :class=>'form-control'
+      .form-group
+        = f.label :pumps_category
+        = f.select( :pumps_category_id, options_for_select(get_pumps_categories, selected:@pump.pumps_category_id), {}, :class=>'form-control' )
+      .form-group
+        = f.label :supply
+        = f.number_field :supply, :step=>0.5,  :class=>'form-control'
+      .form-group
+        = f.label :push
+        = f.number_field :push, :step=>1,  :class=>'form-control'
+      .form-group
+        = f.label :engine
+        = f.number_field :engine, :step=>0.5,  :class=>'form-control'
+      .form-group
+        = f.label :max_temp_material
+        = f.number_field :max_temp_material, :step=>0.5,  :class=>'form-control'
+      .form-group
+        .col-md-12
+          .col-md-2
+            = f.label 'Показывать'
+            = f.check_box :show, checked: true , :class=>'form-control'
+          .col-md-10
+
+      .form-group
+        = f.label :photo
+        = f.file_field :photo,  :class=>'form-control'
+
+      .actions
+        = f.submit 'Сохранить', :class=>'btn btn-default btn-success'
+    .col-md-4
+

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="11.3">
+  <zoom_level>5</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>65</x>
+      <y>105</y>
+      <w>105</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>Users
+--
+//Таблица пользователей 
+//для авторизации и получения доступа
+//к панели администратора
+//Так как подразумевается открытый доступ 
+//к ресурсу для гостей. Соответственно 
+//ИС не нуждается в ролевой системе.
+id: integer, index
+login: string, index, uniq
+email:string, index, uniq
+password:digest_password
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>245</x>
+      <y>155</y>
+      <w>145</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Pump
+--
+id:integer, index, uniq
+//Привязка к категории
+category_id: integer, pk, :null=&gt;false
+//маркировка
+mark:string, index, uniq, :null=&gt;false
+//подача m^3/hour
+supply:float
+//напор (m)
+push:integer?
+//двигатель(кВт)
+engine:float
+//температура перегоняемого вещества(цельсий)
+max_temp_material:float
+//см. описание пакета в комментах.
+show: boolean 
+description:text
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>490</x>
+      <y>145</y>
+      <w>105</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>PumpsCategory
+--
+id:integer, index, uniq
+title:string, index, uniq
+//Назначение
+appointment:text
+//Варианты изготовления
+manufacturing_options:text
+//Условия эксплуатации
+operating_conditions:text
+//Тип перегоняемого материала для категории
+type_material: TypeMaterial
+//Максимальная температура перегоняемого вещества(цельсий)
+//Для данной категории
+max_temp_material: float
+photo:file
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>725</x>
+      <y>155</y>
+      <w>140</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Commits
+--
+id: integer, index, uniq
+commit:integer
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>730</x>
+      <y>255</y>
+      <w>140</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>CommitChanges
+--
+id: integer, index, uniq
+commit_id: integer, pk,index
+type_command: string ["add","update"]
+type_object: string, ["table_name"]
+object_id: integer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>495</x>
+      <y>305</y>
+      <w>105</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>TypeMaterial
+--
+id:  integer, index, uniq
+//Системный код материала
+code: integer, index, uniq
+//Название материала
+name: string, index, uniq</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>245</x>
+      <y>310</y>
+      <w>145</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>PumpPhoto
+--
+id: integer, index, uniq
+pump_id: integer, index, :null=&gt;false
+photo:file</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>775</x>
+      <y>190</y>
+      <w>24</w>
+      <h>74</h>
+    </coordinates>
+    <panel_attributes>m1=1
+m2=*</panel_attributes>
+    <additional_attributes>15;15;15;65</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>300</x>
+      <y>240</y>
+      <w>24</w>
+      <h>79</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>15;15;15;70</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>375</x>
+      <y>185</y>
+      <w>124</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>115;15;15;15</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>525</x>
+      <y>240</y>
+      <w>24</w>
+      <h>74</h>
+    </coordinates>
+    <panel_attributes>m1=*
+m2=1</panel_attributes>
+    <additional_attributes>15;15;15;65</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>690</x>
+      <y>60</y>
+      <w>205</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>Таблицы версионирования
+-коммиты операций
+-Содержание операций
+bg=blue
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>215</x>
+      <y>65</y>
+      <w>405</w>
+      <h>325</h>
+    </coordinates>
+    <panel_attributes>Данные для хранения и обработки
+- Только обновление и добавление данных
+--
+//так как ресурс представляет 
+//собой справочное поссобие
+//в котором будут обновляться или добавляться
+//то не имеет смысла реализовывать удаление. 
+//Вместо этого будет выставлен флаг "show"
+//отвечающий за показ/обработку данной записи.
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>605</x>
+      <y>170</y>
+      <w>94</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+update/add</panel_attributes>
+    <additional_attributes>85;25;15;25</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>555</x>
+      <y>445</y>
+      <w>225</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>
+bg=orange
+При добавлении или редактировании данных
+происходит добавление коммита с описанием операций
+изменений. Это позволяет иметь открытый API с 
+подгрузкой только актуальных данных. Уменьшение 
+данных по сети. 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>640</x>
+      <y>180</y>
+      <w>24</w>
+      <h>274</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>15;265;15;15</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>50</x>
+      <y>75</y>
+      <w>145</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>Системные данные
+--
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>65</x>
+      <y>225</y>
+      <w>125</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>SearchCache
+--
+//Таблица предыдущих результатов поиска
+//Заполняется если такого запроса
+//ранее не было, и/или резульат запроса устарел
+id: integer, index, uniq
+query:string, index, :null=&gt;false
+result:string (marshal)
+datetime:data[update, created]
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

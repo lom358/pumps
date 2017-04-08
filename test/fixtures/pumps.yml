@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mark: MyString
+  supply: 9.99
+  push: 1
+  engine: 9.99
+  max_temp_material: 9.99
+  show: false
+  description: MyText
+
+two:
+  mark: MyString
+  supply: 9.99
+  push: 1
+  engine: 9.99
+  max_temp_material: 9.99
+  show: false
+  description: MyText

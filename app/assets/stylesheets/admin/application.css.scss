@@ -1,0 +1,17 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-formhelpers";
+
+main {
+  min-height: 95%;
+  background: radial-gradient(white, #4B8AE8);
+  margin-bottom: -25px;
+}
+
+body {
+  margin:0;
+}
+

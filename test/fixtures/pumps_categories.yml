@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  appointment: MyText
+  manufacturing_options: MyText
+  operating_conditions: MyText
+  max_temp_material: 9.99
+  photo: 
+
+two:
+  title: MyString
+  appointment: MyText
+  manufacturing_options: MyText
+  operating_conditions: MyText
+  max_temp_material: 9.99
+  photo: 

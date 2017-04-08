@@ -1,0 +1,18 @@
+%h1 Список типов материалов
+%table.table
+  %tr
+    %th ID
+    %th Системный индентификатор
+    %th Название
+    %th Дата создания
+
+  - @type_materials.each do |type_material|
+    %tr
+      %td= type_material.id
+      %td= type_material.code
+      %td= type_material.name
+      %td= type_material.created_at
+
+%br
+
+= link_to 'Добавить +', new_admin_type_material_path, :class=>'btn btn-default btn-primary', :style=>'color:white'

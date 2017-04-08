@@ -1,0 +1,31 @@
+.row
+.row
+  .col-md-12{:style=>'margin-top:10%'}
+    .col-md-4
+    .col-md-4{:style=>'text-align:center'}
+      %form.login-form{:method=>"post", :action=>'/login'}
+        .row
+          %h1 Admin Panel
+        .row
+          %p#notice{:style=>'color:red'}= notice
+        .row
+          .form-group
+            %label.col-sm-5.col-form-label{:style=>'margin-top: 15px;'}
+              Email or Login
+            .col-sm-7
+              %input{:name=>'user[login]', :class=>'form-control'}
+        .margin-top-20
+        .row
+          .form-group
+            %label.col-sm-5.col-form-label{:style=>'margin-top: 15px;'}
+              Password
+            .col-sm-7
+              %input{:name=>'user[password]', :class=>'form-control', :type=>'password'}
+        .margin-top-20
+
+        .row
+          .col-md-2.unpadding#btnLogin
+            %input.btn.btn-success.sys-btn-send-form{:type=>'submit', :name=>"login"}
+
+    .col-md-4
+.row

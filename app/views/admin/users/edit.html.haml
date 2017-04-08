@@ -1,0 +1,7 @@
+%h1 Редактирование пользователя
+
+= render 'form'
+
+= link_to 'Просмотреть', [:admin, @user], :class=>'btn btn-default'
+\|
+= link_to 'Назад', admin_users_path, :class=>'btn btn-default'

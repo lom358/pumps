@@ -1,0 +1,39 @@
+!!! 5
+%html
+  %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %title= content_for?(:title) ? yield(:title) : 'Pumps catalog'
+    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Panel Administrator'}"}
+    = stylesheet_link_tag 'admin/application', media: 'all'
+    = javascript_include_tag 'admin/application'
+
+  %body
+    %header#header
+      %hgroup
+        %h1.site_title
+          %a{:href => "#"} Панель администратора
+        %b.site_title.pull-right
+          %a{:href=>'/logout', :class=>'logout-admin'} Выход
+
+    %aside#sidebar.column
+      %hr
+      %h2
+        %b= "Меню"
+      %ul.toggle
+        %li{:class=>"#{controller_name == 'type_materials' ? 'active' : ''}"}
+          %a{:href => '/admin/type_materials'} Типы материалов
+        %li{:class=>"#{controller_name == 'pumps' ? 'active' : ''}"}
+          %a{:href => '/admin/pumps'} Насосы
+        %li{:class=>"#{controller_name == 'pumps_categories' ? 'active' : ''}"}
+          %a{:href => '/admin/pumps_categories'} Категории насосов
+        %li{:class=>"#{controller_name == 'process_docs' ? 'active' : ''}"}
+          %a{:href => '/admin/process_docs'} Работа через документы
+        %li{:class=>"#{controller_name == 'users' ? 'active' : ''}"}
+          %a{:href => '/admin/users'} Пользователи
+    %section#main.column
+      %article.module.width_full
+        %headerwddd
+          %h3
+        .module_content
+          = yield
+      .spacer

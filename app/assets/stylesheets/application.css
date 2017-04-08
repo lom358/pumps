@@ -1,0 +1,488 @@
+/*
+ *= require bootstrap
+ *= require font_awesome
+ *= require_tree .
+ *= require_self
+ */
+
+
+html {
+    background-color: #f0f0f0;
+}
+
+
+body {
+    background-color: #F0F0F0;
+}
+
+.nav-menu-base > .col-md-12 > .navbar
+{
+    position: relative;
+    padding: 0;
+    margin-bottom: 0;
+    border-top: solid 2px #000000;
+}
+
+.nav-menu-base > .col-md-12 > .navbar > .container{
+    width: auto;
+}
+
+@font-face {
+    font-family: Rancho-Regular;
+    src: url('/Rancho-Regular.ttf');
+}
+
+@font-face {
+    font-family:futura_medium_bt-webfont;
+    src: url('/futura_medium_bt-webfont.ttf');
+}
+
+.block-top-menu-item.phone,
+.block-top-menu-item.phone > a{
+    font-family: Rancho-Regular, serif;
+    font-size: 40px;
+    background-color: inherit;
+    color: #000;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.margin-top-20{
+    margin-top: 20px;
+}
+
+.jssorb05 {
+    position: absolute;
+}
+.jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+    position: absolute;
+    /* size of bullet elment */
+    width: 16px;
+    height: 16px;
+    background: url('img/b05.png') no-repeat;
+    overflow: hidden;
+    cursor: pointer;
+}
+.jssorb05 div { background-position: -7px -7px; }
+.jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+.jssorb05 .av { background-position: -67px -7px; }
+.jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+
+/* jssor slider arrow navigator skin 22 css */
+/*
+.jssora22l                  (normal)
+.jssora22r                  (normal)
+.jssora22l:hover            (normal mouseover)
+.jssora22r:hover            (normal mouseover)
+.jssora22l.jssora22ldn      (mousedown)
+.jssora22r.jssora22rdn      (mousedown)
+.jssora22l.jssora22lds      (disabled)
+.jssora22r.jssora22rds      (disabled)
+*/
+.jssora22l, .jssora22r {
+    display: block;
+    position: absolute;
+    /* size of arrow element */
+    width: 40px;
+    height: 58px;
+    cursor: pointer;
+    background: url('img/a22.png') center center no-repeat;
+    overflow: hidden;
+}
+.jssora22l { background-position: -10px -31px; }
+.jssora22r { background-position: -70px -31px; }
+.jssora22l:hover { background-position: -130px -31px; }
+.jssora22r:hover { background-position: -190px -31px; }
+.jssora22l.jssora22ldn { background-position: -250px -31px; }
+.jssora22r.jssora22rdn { background-position: -310px -31px; }
+.jssora22l.jssora22lds { background-position: -10px -31px; opacity: .3; pointer-events: none; }
+.jssora22r.jssora22rds { background-position: -70px -31px; opacity: .3; pointer-events: none; }
+
+
+.welcom-block{
+    text-align: justify;
+}
+
+.justify-block {
+    text-align: justify;
+}
+
+.welcom-block > img {
+    float: left;
+}
+
+.row.portfolio-second >  .col-md-2.portfolio-item {
+    margin: 20px;
+}
+
+.col-md-12.models_auto > .col-sm-3.portfolio-item {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.col-md-12.models_auto > .col-sm-3.portfolio-item > span {
+    font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.contact-info-header > .row {
+    margin:0;
+}
+
+.row.contact-info-header {
+    font-size:10px;
+    font-family: futura_medium_bt-webfont;
+
+    background-color: #E0E0E0;
+}
+
+
+.col-md-3 > .text-center > p > b {
+    font-size:14px;
+}
+
+.block-top-menu > .row > .col-md-3 > .text-center {
+    margin-top:15px;
+}
+
+/*google */
+
+#map {
+    height: 600px;
+    position: relative;
+    width: 100%;
+}
+
+.maps-frame {
+    height: 430px;
+    width: 100%;
+}
+
+.kd-tabbed-vert.header-links .kd-tabbutton a {
+    color: #757575;
+    display: inline-block;
+    height: 100%;
+    padding: 0 24px;
+    width: 100%;
+}
+
+.kd-tabbed-vert.header-links .kd-tabbutton {
+    padding: 0;
+}
+
+.kd-tabbed-vert.header-links .kd-tabbutton.selected a {
+    color: #03a9f4;
+}
+
+.kd-tabbed-vert.header-links .kd-tabbutton a:focus {
+    text-decoration: none;
+}
+
+p.top-desc {
+    padding: 1em 1em .1em 1em;
+}
+
+p.bottom-desc {
+    padding: 0em 1em 1em 1em;
+}
+
+/*menu*/
+
+ul.nav.navbar-nav.navbar-custom > li.page-scroll > a:hover,
+ul.nav.navbar-nav.navbar-left > li.page-scroll > a:hover
+{
+    /*color: red;*/
+    font-size: large;
+    color:white;
+}
+
+.vertical-sub {
+    /*vertical-align: sub;*/
+}
+
+
+#bs-example-navbar-collapse-1.collapse.navbar-collapse > ul.nav.navbar-nav.navbar-custom {
+    /*width: 100%;*/
+    /*display: flex;*/
+    /*margin: auto;*/
+    /*margin-left: 3%;*/
+}
+
+#bs-example-navbar-collapse-1.collapse.navbar-collapse > ul.nav.navbar-nav.navbar-custom > li.page-scroll{
+    /*margin: auto;*/
+    /*min-width: 10%;*/
+    /*text-align: start;*/
+}
+
+
+/*end of menu*/
+
+.row {
+    margin-right:0;
+    margin-left:0;
+}
+
+.type-work-title{
+    padding: 0;
+}
+
+section#portfolio{
+    margin-right:0;
+    margin-left:0;
+}
+
+.footer-col.col-md-4 {
+    padding-left: 0;
+}
+
+
+
+.mark-logo, .company-logo {
+    height: 230px;
+    background-color: #c30930;
+    border-bottom-width: 10px;
+    border-bottom-style: solid;
+    border-bottom-color: #E0E0E0;
+}
+
+.company-logo > img{
+    padding-top: 30px;
+}
+
+.mark-logo-1{
+    /*background-color: #c30930;*/
+}
+
+
+.mark-logo-1, .company-logo-1, .company-logo-1.a{
+    height: 150px;
+    /*background-color: #c30930;*/
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    border-bottom-color: #E0E0E0;
+}
+
+.mark-logo-ford, .company-logo-ford {
+    height: 150px;
+    /*background-color: #1b7db0;*/
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    border-bottom-color: #F0F0F0;
+}
+
+.mark-logo-infiniti, .company-logo-infiniti {
+    height: 150px;
+    /*background-color: #1b7db0;*/
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    border-bottom-color: #f1f1f1;
+
+}
+
+.nissan-1 {
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: 2px;
+}
+
+
+.row.contact-info-header > .block-top-menu > .row > .col-md-8 > .row > .col-md-6,
+.row.contact-info-header > .block-top-menu > .row > .col-md-8 > .row > .col-md-4
+{
+    padding-top: 4px;
+}
+
+a.street-name:hover,
+a.tel-number-hover:hover{
+    text-shadow: 1px 1px 2px white, 0 0 1em #4e4e50; /* Параметры тени */
+    text-decoration: none;
+}
+
+.company-logo-1 > img, .company-logo-1 > a > img{
+    padding-top: 30px;
+}
+
+.col-md-5.block-top-menu-logo.text-center {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.login-form{
+    vertical-align: middle;
+    background-color: lightgrey;
+    padding: 10px;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.price-list-table > tbody > tr > td,
+.price-list-table > tbody > tr > th
+{
+    border-color:black;
+    border-width:1px;
+    border-style:solid;
+}
+
+.slider-name, .slider-description {
+    position: absolute;
+    left: 40px;
+    width: 480px;
+    padding: 20px;
+    /*padding-left: 20px;*/
+}
+
+.slider-name {
+    top: 30px;
+    font-weight: 600;
+    font-size: 50px;
+    color: white;
+    line-height: 60px;
+    background-color: red;
+}
+
+.slider-description {
+    top: 300px;
+    font-size: 30px;
+    color: #ffffff;
+    line-height: 38px;
+    background-color: gray;
+}
+
+.sys-tel-header-info > a:hover{
+    background: #C3523D !important;
+    border-color: #C3523D !important;
+}
+
+.sys-tel-header-info-ford > a:hover{
+    background: #1f54a8 !important;
+    border-color: #266ee2 !important;
+}
+
+.sys-tel-header-info-infiniti > a:hover{
+    background: #222323 !important;
+    border-color: #222323 !important;
+}
+
+/*Stocks*/
+.type-item {
+    float: right;
+    margin-right: 25px;
+    padding: 2px;
+    margin-top:5px;
+}
+
+.label-red {
+    background-color: red;
+    color:white;
+
+}
+
+h3.stock-item-title > a{
+    color: #111;
+    font-size: 12px;
+    margin: 15px;
+    text-decoration: none;
+    font-weight:500;
+}
+
+.stock-item-text {
+    color: #777;
+    margin-bottom: 9px;
+    margin: 15px;
+
+}
+
+a.hasarrow {
+    text-decoration: underline;
+    text-transform: none;
+    font-size: 12px;
+    line-height: 1.66;
+    margin: 15px;
+    color:#c3002f;
+}
+
+
+.line-border-stock {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.row.stocks-content-img > .col-md-2 > img {
+    transition: 0.3s ease-in;
+}
+
+.row.stocks-content-img > .col-md-2 > img:hover {
+    z-index:3;
+    position: absolute;
+    zoom: 1;
+}
+
+.h1_guarantee {
+    text-align: center;
+    font-size: 23px;
+    color: #FFF;
+    padding-top: 30px;
+    font-weight: 600;
+}
+
+.g_2years, .g_description{
+    text-align: center;
+    font-size: 14px;
+    color:white;
+    padding-bottom: 30px;
+}
+
+.info-header-top {
+    font-size: 38px;
+    font-weight: bold;
+}
+
+
+.info-header-model-name{
+    font-size: 38px;
+    font-stretch: ultra-condensed;
+    font-weight: bold;
+    /*letter-spacing: 20px;*/
+}
+
+
+.info-header-name-street{
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.street-name,
+.phone-number{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.street-name-mobile,
+.phone-number-mobile{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*===  for stocks ===*/
+
+.col-lg-12.col-sm-12.stock_box {
+    box-shadow: 0 0 0 5px #cccccc;
+    height: 350px;
+    padding-bottom: 80px;
+    display: inline-block;
+    background: transparent no-repeat top right;
+    background-size: 50%;
+}
+
+.message_stock_box {
+    height: 350px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.message_stock_box_mobile {
+    height: 350px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}

@@ -1,0 +1,33 @@
+%h1 Список категорий насосов
+%table.table
+  %tr
+    %th Маркировка
+    %th Подача
+    %th Категория
+    %th Напор
+    %th Двигатель
+    %th Макс. температура
+    %th Обработка
+    %th
+    %th
+    %th
+
+  - @pumps.each do |pump|
+    %tr
+      %td= pump.mark
+      %td= pump.supply
+      %td= pump.pumps_category.title
+      %td= pump.push
+      %td= pump.engine
+      %td= pump.max_temp_material
+      %td= pump.show
+      %td
+        - unless pump.pump_photo
+          = image_tag(pump.pump_photo.first.photo(:medium))
+      %td= link_to 'Просмотреть', [:admin, pump]
+      %td= link_to 'Редактировать', edit_admin_pumps_category_path(pump)
+      %td= link_to 'Удалить', [:admin, pump], :method => :delete, :data => { :confirm => 'Вы уверены?' }
+
+%br
+
+= link_to 'Добавить +', new_admin_pump_path, :class=>'btn btn-default btn-primary', :style=>'color:white'
