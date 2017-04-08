@@ -1,4 +1,4 @@
-%h1 Выберети категорию для скачивания списка насосов в формате excel
+%h1 Выберети категорию для скачивания списка насосов
 
 .row
   .col-md-12
@@ -8,11 +8,13 @@
         = select_tag 'pump_category_id', options_for_select(get_pumps_categories), :class=>'form-control'
       .row
         .col-md-12
-        .actions
-          %input.btn.btn-default.btn-success{:name=>'qqq', :value => 'Скачать'} CSV
-
-        .actions
-          %input.btn.btn-default.btn-success{:name=>'qqq', :value => 'Скачать'} EXL
+          %input.btn.btn-default.btn-success{:id=>'download_csv', :value => 'Скачать'}
+          %label  в формате CSV
+      .block-20{:style=>'height:20px'}
+      .row
+        .col-md-12
+          %input.actions.btn.btn-default.btn-success{:id=>'download_exl', :value => 'Скачать'}
+          %label в формате EXL
 
 
 
@@ -21,5 +23,6 @@
 .row
   .col-md-12
     .col-md-4
+      %input.form-control{:name=>'qqq', :type=>'file', :value => 'Загрузить'}
     .col-md-4
     .col-md-4
