@@ -1,0 +1,38 @@
+= render 'header_info'
+= render 'navigation'
+= render 'search'
+
+
+.row
+  .col-md-12.col-sm-12
+    %p
+      %b Название
+    %p
+      = @pump_category.title
+    %p
+      %b Назначение
+    %p
+      = @pump_category.appointment
+    %p
+      %b Варианты изготовления
+    %p
+      = @pump_category.manufacturing_options
+    %p
+      %b Условия эксплуатации
+    %p
+      = @pump_category.operating_conditions
+    %p
+      %b Максимальная температура перегоняемого вещества(цельсий)
+    %p
+      = @pump_category.max_temp_material
+    %p
+      %b Прилагаемая фотография
+    %p
+      = image_tag(@pump_category.photo(:medium))
+    %p
+      %b Перегоняемый материал :
+      = @pump_category.type_material.name
+
+= render 'categories'
+= render 'description'
+= render 'footer'

@@ -1,0 +1,35 @@
+.row.contact-info-header
+  .block-top-menu
+    .row
+      .col-md-2.mark-logo-1
+        .col-md-12{:style=>'margin-left: -15px;margin-right: -15px; padding-top: 7px; padding-bottom: 25px;height: 150px;'}
+      .col-md-8
+        - unless @is_mobile 
+          .row
+            .text-center
+              %span.info-header-top= 'Каталог насосов'
+        .row
+          .text-center
+            %span.info-header-model-name= 'ЗАО "Вентиляция, водоснабжение, теплоснабжение" '
+        .row
+          .col-md-6
+            .row.text-center
+              - unless @is_mobile
+                %a.street-name{:href=>'#map', :style=>'color:#2c3e50;'}
+                  Лукашин Дмитрий
+              - else
+                %a.street-name-mobile{:href=>'#map', :style=>'color:#2c3e50;'}
+                  Лукашин Дмитрий
+          .col-md-6
+            .row.text-center
+              - unless @is_mobile
+                %a.phone-number.tel-number-hover{:href=>'tel:+79165866796', :style=>'color:#2c3e50;letter-spacing:3px;'}
+                  +7 (916) 586 67 96
+              - else
+                %a.phone-number-mobile.tel-number-hover{:href=>'tel:+79165866796', :style=>'color:#2c3e50;'}
+                  +7 (916) 586 67 96
+      .col-md-2.company-logo-1
+        %a{:href=>'http://mospolytech.ru/'}
+          = image_tag('mpu_logo_main.png', :width=>200, :height=>200)
+
+

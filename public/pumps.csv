@@ -1,0 +1,4 @@
+id,title,appointment,manufacturing_options,operating_conditions,type_material_id,max_temp_material,photo_file_name,photo_content_type,photo_file_size,photo_updated_at,created_at,updated_at
+1,Категория 1,назначение 1,спосок изготовления 1,условия эксплуатации 1,2,140.0,128.png,image/png,8770,2017-04-08 18:01:56 UTC,2017-04-08 18:01:57 UTC,2017-04-08 18:01:57 UTC
+id,pumps_category_id,mark,supply,push,engine,max_temp_material,show,description,created_at,updated_at
+1,1,марка1,120.0,120,120.0,120.0,true,насос1,2017-04-08 18:02:59 UTC,2017-04-08 18:02:59 UTC

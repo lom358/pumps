@@ -255,7 +255,7 @@ section#portfolio{
 }
 
 
-.mark-logo-1, .company-logo-1, .company-logo-1.a{
+.mark-logo-1, . company-logo-1, .company-logo-1.a{
     height: 150px;
     /*background-color: #c30930;*/
     border-bottom-width: 5px;
@@ -300,7 +300,7 @@ a.tel-number-hover:hover{
 }
 
 .company-logo-1 > img, .company-logo-1 > a > img{
-    padding-top: 30px;
+    padding-top: 40px;
 }
 
 .col-md-5.block-top-menu-logo.text-center {
@@ -485,4 +485,19 @@ a.hasarrow {
     height: 350px;
     padding-top: 80px;
     padding-bottom: 80px;
+}
+
+.col-md-2.col-sm-2.btn.btn-success.sys-btn-category  {
+    width: 150px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+
+.category_box{
+    background-color: lightgrey;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
 }

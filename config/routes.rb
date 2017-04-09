@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   post '/login' =>'login#create'
   get '/logout' => 'login#destroy'
 
+  get '/' => 'home#index'
+
+  resources :pumps_categories, :only => [:index, :show]
+  resources :pumps, :only => [:index, :show]
+
+  post '/search' => 'search#search'
+
   namespace :admin do
     resources :users
     resources :pumps_categories, except: [:destroy]

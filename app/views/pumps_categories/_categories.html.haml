@@ -1,0 +1,15 @@
+
+.row
+  .col-md-12.col-sm-12
+    .row#stocks{:style=>'background-color: #F0F0F0;'}
+      .col-lg-12.text-left{:style=>'margin-left:20px'}
+        %h2 Категории
+  .row{:style=>'background-color: #F0F0F0;'}
+    .col-md-12
+      .line-border-stock{:style=>'border-bottom: #DCDCDC;   border-bottom-style: dashed;    border-bottom-width: 1px;'}
+
+.row
+  .col-md-12.col-sm-12{:style=>'padding-top:10px;'}
+    - @pumps_categories.each do |category|
+      %a{:href=>"/pumps_categories/#{category.id}", :style=>'color:black', :title=>"#{category.appointment}"}
+        %span.category_box= category.title

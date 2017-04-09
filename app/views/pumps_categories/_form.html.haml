@@ -1,0 +1,38 @@
+= form_for([:admin, @pump_category]) do |f|
+  - if @pump_category.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@pump_category.errors.count, "error")} prohibited this user from being saved:"
+      %ul
+        - @pump_category.errors.full_messages.each do |msg|
+          %li= msg
+
+  .col-md-12
+    .col-md-4
+    .col-md-4
+      .form-group
+        = f.label :title
+        = f.text_field :title, :class=>'form-control'
+      .form-group
+        = f.label :appointment
+        = f.text_area :appointment, :class=>'form-control'
+      .form-group
+        = f.label :manufacturing_options
+        = f.text_area :manufacturing_options, :class=>'form-control'
+      .form-group
+        = f.label :operating_conditions
+        = f.text_area :operating_conditions, :class=>'form-control'
+      .form-group
+        = f.label :type_material
+        = f.select( :type_material_id, options_for_select(get_type_materials, selected:@pump_category.type_material_id), {}, :class=>'form-control' )
+      .form-group
+        = f.label :max_temp_material
+        = f.number_field :max_temp_material, :step=>0.5,  :class=>'form-control'
+
+      .form-group
+        = f.label :photo
+        = f.file_field :photo, :type=>'file',  :class=>'form-control'
+
+      .actions
+        = f.submit 'Сохранить', :class=>'btn btn-default btn-success'
+    .col-md-4
+

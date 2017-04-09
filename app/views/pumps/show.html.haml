@@ -1,0 +1,41 @@
+= render 'header_info'
+= render 'navigation'
+= render 'search'
+.row
+  .col-md-12.col-sm-12
+
+    %p#notice= notice
+
+    %p
+      %b Маркировка
+    %p
+      = @pump.mark
+    %p
+      %b Подача m^3/час
+    %p
+      = @pump.supply
+    %p
+      %b напор (m)
+    %p
+      = @pump.push
+    %p
+      %b Двигатель(кВт)
+    %p
+      = @pump.engine
+    %p
+      %b Максимальная температура перегоняемого вещества(цельсий)
+    %p
+      = @pump.max_temp_material
+    %p
+      %b Прилагаемая фотография
+    %p
+      - if !@pump.pump_photo.first.nil?
+        = image_tag(@pump.pump_photo.first.photo(:medium))
+
+= render 'categories'
+= render 'description'
+= render 'footer'
+
+= link_to 'Редактировать', edit_admin_pump_path(@pump), :class=>'btn btn-default'
+\|
+= link_to 'Назад', admin_pumps_path, :class=>'btn btn-default'

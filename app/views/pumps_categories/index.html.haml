@@ -1,0 +1,28 @@
+= render 'header_info'
+= render 'navigation'
+= render 'search'
+.row
+  .col-md-12.col-sm-12
+    %h1 Список категорий насосов
+    %table.table
+      %tr
+        %th Название
+        %th Назначение
+        %th Прилагаемая фотография
+        %th
+        %th
+        %th
+
+      - @pump_categories.each do |category|
+        %tr
+          %td= category.title
+          %td= category.appointment
+          %td
+            = image_tag(category.photo(:medium))
+          %td= link_to 'Просмотреть',  category
+
+    %br
+
+= render 'categories'
+= render 'description'
+= render 'footer'
