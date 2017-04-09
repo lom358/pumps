@@ -3,6 +3,7 @@ class SearchController < ApplicationController
   def search
     query = params[:query]
     type = params[:type]
+    column_name = []
     query_w = '%'+query+'%'
     render :json => {status:200, responce:'bad params'} unless query and type
     result = case type
@@ -26,7 +27,10 @@ class SearchController < ApplicationController
                else
                  []
              end
-        render :json => {status:200, result: result}
+        column_name = Pump.column_names.to_a if type == 'pumps'
+        column_name = PumpsCategory.column_names.to_a if type == 'pumps_category'
+        column_name = TypeMaterial.column_names.to_a if type == 'type_material'
+        render :json => {status:200, result: result, column_name:column_name}
   end
 
 end
