@@ -2,8 +2,6 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require freelancer
-//= require_directory .
-// require_tree .
 
 PUMP = {
     init:function () {
