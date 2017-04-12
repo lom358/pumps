@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408105214) do
+ActiveRecord::Schema.define(version: 20170412060719) do
 
   create_table "pump_photos", force: :cascade do |t|
     t.integer  "pump_id",            null: false
@@ -51,6 +51,13 @@ ActiveRecord::Schema.define(version: 20170408105214) do
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.index ["type_material_id"], name: "index_pumps_categories_on_type_material_id"
+  end
+
+  create_table "search_caches", force: :cascade do |t|
+    t.string   "query"
+    t.text     "result"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "type_materials", force: :cascade do |t|
