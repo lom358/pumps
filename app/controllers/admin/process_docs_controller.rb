@@ -9,7 +9,7 @@ class Admin::ProcessDocsController < Admin::AdminController
   end
 
   def download_exl
-    package = Axlsx::Package.new({:author=>'Grachev Denis'})
+    package = Axlsx::Package.new({:author=>'Dmitriy Lukashin'})
     workbook = package.workbook
     name = 'pumps.xls'
     pumps_category_id = params[:pumps_category_id].to_i
