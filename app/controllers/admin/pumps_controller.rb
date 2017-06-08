@@ -1,6 +1,6 @@
 class Admin::PumpsController <  Admin::AdminController
 
-  before_action :set_pump, :only => [:show, :edit, :update]
+  before_action :set_pump, :only => [:show, :edit, :update, :destroy]
 
   def index
     @pumps = Pump.all.load
@@ -36,7 +36,20 @@ class Admin::PumpsController <  Admin::AdminController
   end
 
   def update
+    respond_to do |format|
+      if @pump.update(pumps_params)
+        format.html { redirect_to [:admin, @pump], notice: 'Pump was successfully updated.' }
+      else
+        format.html { render action: 'edit' }
+      end
+    end
+  end
 
+  def destroy
+    @pump.destroy
+    respond_to do |format|
+      format.html { redirect_to admin_pump_url, notice: 'Pump was successfully destroyed.' }
+    end
   end
 
 

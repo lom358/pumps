@@ -1,6 +1,6 @@
 class Admin::PumpsCategoriesController <  Admin::AdminController
 
-  before_action :set_pump_category, :only => [:update, :show, :edit]
+  before_action :set_pump_category, :only => [:update, :show, :edit, :destroy]
 
   def index
     @pump_categories = PumpsCategory.all.load
@@ -38,6 +38,13 @@ class Admin::PumpsCategoriesController <  Admin::AdminController
         format.html { render action: 'edit' }
         format.json { render json: @pump_category.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy
+    @pump_category.destroy
+    respond_to do |format|
+      format.html { redirect_to admin_pumps_categories_url, notice: 'Pump categories was successfully destroyed.' }
     end
   end
 

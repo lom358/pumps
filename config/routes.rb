@@ -14,8 +14,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users
-    resources :pumps_categories, except: [:destroy]
-    resources :pumps, :except => [:destroy]
+    resources :pumps_categories
+    resources :pumps
     resources :type_materials, except:[:destroy, :show, :edit]
     get '/process_docs' => 'process_docs#index'
     post '/download_exl' => 'process_docs#download_exl'

@@ -25,7 +25,7 @@
         - unless pump.pump_photo
           = image_tag(pump.pump_photo.first.photo(:medium))
       %td= link_to 'Просмотреть', [:admin, pump]
-      %td= link_to 'Редактировать', edit_admin_pumps_category_path(pump)
+      %td= link_to 'Редактировать', edit_admin_pump_path(pump)
       %td= link_to 'Удалить', [:admin, pump], :method => :delete, :data => { :confirm => 'Вы уверены?' }
 
 %br

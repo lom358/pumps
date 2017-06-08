@@ -4,40 +4,39 @@
 = render 'result'
 
 .row
+  .margin-top-20
+.row
   .col-md-12.col-sm-12
+    .col-md-3
+    .col-md-6{:style=>'text-align:center;'}
+      %p#notice= notice
+      %p
+        - if !@pump.pump_photo.first.nil?
+          = image_tag(@pump.pump_photo.first.photo(:medium))
 
-    %p#notice= notice
+      %table.table-bordered
+        %thead
+          %tr
+            %th{:style=>'border-color:black;'} Маркировка
+            %th{:style=>'border-color:black;'} Подача m^3/час
+            %th{:style=>'border-color:black;'} напор (m)
+            %th{:style=>'border-color:black;'} Двигатель(кВт)
+            %th{:style=>'border-color:black;'} Макс. Темп. перегоняемого вещества(цельсий)
+            %th{:style=>'border-color:black;'} Категория
+        %tbody
+          %tr
+            %td{:style=>'border-color:black;'}= @pump.mark
+            %td{:style=>'border-color:black;'}= @pump.supply
+            %td{:style=>'border-color:black;'}= @pump.push
+            %td{:style=>'border-color:black;'}= @pump.engine
+            %td{:style=>'border-color:black;'}= @pump.max_temp_material
+            %td{:style=>'border-color:black;'}
+              %a{:href=>"/pumps_categories/#{@pump.pumps_category.id}"}= @pump.pumps_category.title
 
-    %p
-      %b Маркировка
-    %p
-      = @pump.mark
-    %p
-      %b Подача m^3/час
-    %p
-      = @pump.supply
-    %p
-      %b напор (m)
-    %p
-      = @pump.push
-    %p
-      %b Двигатель(кВт)
-    %p
-      = @pump.engine
-    %p
-      %b Максимальная температура перегоняемого вещества(цельсий)
-    %p
-      = @pump.max_temp_material
-    %p
-      %b Прилагаемая фотография
-    %p
-      - if !@pump.pump_photo.first.nil?
-        = image_tag(@pump.pump_photo.first.photo(:medium))
+
+    .col-md-3
+
 
 = render 'categories'
 = render 'description'
 = render 'footer'
-
-= link_to 'Редактировать', edit_admin_pump_path(@pump), :class=>'btn btn-default'
-\|
-= link_to 'Назад', admin_pumps_path, :class=>'btn btn-default'

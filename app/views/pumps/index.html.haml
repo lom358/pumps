@@ -6,38 +6,33 @@
 
 .row
   .col-md-12.col-sm-12
+    .col-md-3
+    .col-md-6
 
-    %h1 Список категорий насосов
-    %table.table
-      %tr
-        %th Маркировка
-        %th Подача
-        %th Категория
-        %th Напор
-        %th Двигатель
-        %th Макс. температура
-        %th Обработка
-        %th
-        %th
-        %th
+      %h1 Список категорий насосов
+      %table.table.table-bordered
+        %tr{:style=>'border-color:black;'}
+          %th{:style=>'border-color:black;'} Маркировка
+          %th{:style=>'border-color:black;'} Подача
+          %th{:style=>'border-color:black;'} Категория
+          %th{:style=>'border-color:black;'} Напор
+          %th{:style=>'border-color:black;'} Двигатель
+          %th{:style=>'border-color:black;'} Макс. температура
+          %th{:style=>'border-color:black;'}
 
-      - @pumps.each do |pump|
-        %tr
-          %td= pump.mark
-          %td= pump.supply
-          %td= pump.pumps_category.title
-          %td= pump.push
-          %td= pump.engine
-          %td= pump.max_temp_material
-          %td= pump.show
-          %td
-            - unless pump.pump_photo
-              = image_tag(pump.pump_photo.first.photo(:medium))
-          %td= link_to 'Просмотреть', [:admin, pump]
-          %td= link_to 'Редактировать', edit_admin_pumps_category_path(pump)
-          %td= link_to 'Удалить', [:admin, pump], :method => :delete, :data => { :confirm => 'Вы уверены?' }
+        - @pumps.each do |pump|
+          %tr{:style=>'border-color:black;'}
+            %td{:style=>'border-color:black;'}= pump.mark
+            %td{:style=>'border-color:black;'}= pump.supply
+            %td{:style=>'border-color:black;'}= pump.pumps_category.title
+            %td{:style=>'border-color:black;'}= pump.push
+            %td{:style=>'border-color:black;'}= pump.engine
+            %td{:style=>'border-color:black;'}= pump.max_temp_material
+            %td{:style=>'border-color:black;'}
+              %a{:href=>"/pumps/#{pump.id}"} Просмотреть
 
-    %br
+    .col-md-3
+
 
 = render 'categories'
 = render 'description'

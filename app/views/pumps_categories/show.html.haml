@@ -3,36 +3,65 @@
 = render 'search'
 = render 'result'
 
-
+.row
+  .margin-top-20
 .row
   .col-md-12.col-sm-12
-    %p
-      %b Название
-    %p
-      = @pump_category.title
-    %p
-      %b Назначение
-    %p
-      = @pump_category.appointment
-    %p
-      %b Варианты изготовления
-    %p
-      = @pump_category.manufacturing_options
-    %p
-      %b Условия эксплуатации
-    %p
-      = @pump_category.operating_conditions
-    %p
-      %b Максимальная температура перегоняемого вещества(цельсий)
-    %p
-      = @pump_category.max_temp_material
-    %p
-      %b Прилагаемая фотография
-    %p
-      = image_tag(@pump_category.photo(:medium))
-    %p
-      %b Перегоняемый материал :
-      = @pump_category.type_material.name
+    .col-md-3
+    .col-md-6{:style=>'text-align:center;'}
+      %p
+        %b Название
+      %p
+        = @pump_category.title
+      %p
+        = image_tag(@pump_category.photo(:medium))
+      %p
+        %b Назначение
+      %p
+        = @pump_category.appointment
+      %p
+        %b Варианты изготовления
+      %p
+        = @pump_category.manufacturing_options
+      %p
+        %b Условия эксплуатации
+      %p
+        = @pump_category.operating_conditions
+      %p
+        %b Максимальная температура перегоняемого вещества(цельсий)
+      %p
+        = @pump_category.max_temp_material
+      %p
+        %b Перегоняемый материал :
+        = @pump_category.type_material.name
+
+    .col-md-3
+
+
+.row
+  .col-md-12
+    .col-md-2
+    .col-md-8
+      %article
+        %h3 Насосы входящие в категорию:
+      %table.table.table-bordered{:style=>'border-color:black;'}
+        %thead{:style=>'border-color:black;'}
+          %tr{:style=>'border-color:black;'}
+            %th{:style=>'border-color:black;'} Марка
+            %th{:style=>'border-color:black;'} Двигатель
+            %th{:style=>'border-color:black;'} Вещество
+            %th{:style=>'border-color:black;'}
+
+        %tbody{:style=>'border-color:black;'}
+          - @pump_category.pumps.each do |pump|
+            %tr{:style=>'border-color:black;'}
+              %td{:style=>'border-color:black;'}= pump.mark
+              %td{:style=>'border-color:black;'}= pump.engine
+              %td{:style=>'border-color:black;'}= @pump_category.type_material.name
+              %td{:style=>'border-color:black;'}
+                %a{:href=>"/pumps/#{pump.id}"} Просмотреть
+    .col-md-2
+
 
 = render 'categories'
 = render 'description'
