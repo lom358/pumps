@@ -52,7 +52,9 @@ PUMP = {
                 if (column_names[j] == 'id') {
                     tmp += PUMP.process_href(data[i][column_names[j]], type_search);
                 } else {
-                    tmp += "<td>" + data[i][column_names[j]] + "</td>";
+                    if (column_names[j] != 'show') {
+                        tmp += "<td>" + data[i][column_names[j]] + "</td>";
+                    }
                 }
             }
             table += tmp;
