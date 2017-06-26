@@ -66,7 +66,7 @@ PUMP = {
     },
 
     process_href : function (id, type_search) {
-        var str = "<td><a href=";
+        var str = "<td style=\'border-color:black;\'><a href=";
         var href = "\'";
         if (type_search == 'pumps') {
             href += '/pumps/' + id;
