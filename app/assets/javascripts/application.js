@@ -54,7 +54,7 @@ PUMP = {
                     tmp += PUMP.process_href(data[i][column_names[j]], type_search);
                 } else {
                     if (column_names[j] != 'show') {
-                        tmp += "<td>" + data[i][column_names[j]] + "</td>";
+                        tmp += "<td style=\'border-color:black;\'>" + data[i][column_names[j]] + "</td>";
                     }
                 }
             }
