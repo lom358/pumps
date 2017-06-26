@@ -45,10 +45,10 @@ PUMP = {
         var float_point= $('#result_data');
         $(float_point).children().remove();
         var tmp = "";
-        var table = "<table class=\'table\'>";
+        var table = "<table class=\'table table-bordered\'>";
         for (var i = 0; data.length > i; i++) {
             tmp = "";
-            table +="<tr>";
+            table +="<tr style=\'border-color:black;\'>";
             for(var j = 0; column_names.length > j; j++) {
                 if (column_names[j] == 'id') {
                     tmp += PUMP.process_href(data[i][column_names[j]], type_search);
@@ -77,7 +77,7 @@ PUMP = {
         if (type_search == 'type_material') {
             href += '/type_materials/' + id;
         }
-        str += href + "\'>Просмотреть</a></td>";
+        str += href + "\' style=\'border-color:black;\'>Просмотреть</a></td>";
         return str;
     },
 
