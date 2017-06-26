@@ -47,6 +47,7 @@ PUMP = {
         var tmp = "";
         var table = "<table class=\'table\'>";
         for (var i = 0; data.length > i; i++) {
+            tmp = "";
             table +="<tr>";
             for(var j = 0; column_names.length > j; j++) {
                 if (column_names[j] == 'id') {
